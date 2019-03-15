@@ -7,11 +7,15 @@ app.config['UPLOAD_FOLDER']="/home/ronet/Documents/Deloitte_Hackathon/pyfiles"
 def upload():
    return render_template('upload.html')
 	
-@app.route('/uploader', methods = ['GET', 'POST'])
+@app.route('/uploader', methods = ["GET","POST"])
 def upload_file():
    if request.method == 'POST':
       f = request.files['zipfile']
       f.save(secure_filename(f.filename))
+      job_desc=request.form["resume_filter"].get("jobdesc")
+      num_rank=request.form["resume_filter"].get("rank")
+      
+      
       return 'file uploaded successfully'
 		
 if __name__ == '__main__':
