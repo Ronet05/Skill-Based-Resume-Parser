@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 
    {% block content%}
-      <form action = "http://localhost:5000/uploader" method = "POST" name="resume_filter"  enctype = "multipart/form-data">
-         <div class="form-group" style="padding-top: 2%;">
+      <form action = "http://localhost:5000/uploader" method = "POST" name="resume_filter"  enctype = "multipart/form-data" >
+         <fieldset class="form-group" >
+         <div class="form-group" >
                <label>Enter your job description here: </label><br>
                <textarea rows="4" cols="50" name="jobdesc" id="jobdesc"></textarea>
          </div>
@@ -17,6 +18,7 @@
          <div class="form-group">
                <input type = "submit" class="btn btn-outline-info"/>
          </div>
+      </fieldset>
       </form>
    {% endblock content %}
       

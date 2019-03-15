@@ -1,9 +1,13 @@
 {% extends "layout.html" %}
     {% block content %}
-        <h2> File has been uploaded</h2><br>
-        <h2>Details from the form</h2><br>
-        <h3>{{ details[0] }}</h3><br>
-        <h3>{{ details[1] }}</h3><br>
+        <h3> File has been uploaded</h3><br>
+        <h3>Summarized resumes</h3><br>
+        
+        {% for resume in resumes %}
+            <h3>This resume is: </h3><br>
+            <h3>{{resume}}</h3>
+            <br>
+        {% endfor %}
 
 
     {%endblock content %}

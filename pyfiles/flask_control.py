@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, url_for
 from werkzeug import secure_filename
 import requests
+from pdfreader import PDFReader
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER']="/home/ronet/Documents/Deloitte_Hackathon/pyfiles"
@@ -17,9 +18,11 @@ def upload_file():
       job_desc=request.form.get("jobdesc")
       num_rank=request.form.get("rank")
       req_details=[job_desc,num_rank]
+      reader=PDFReader()
+      allresumes=reader.extractandread(f.filename)
       
-      
-      return render_template('printresult.html', details=req_details)
+
+      return render_template('printresult.html', resumes=allresumes)
 #def print_result():
 #    return render_template('printresult.html', transfer=pdfreader)
 		
