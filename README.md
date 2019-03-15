@@ -8,14 +8,14 @@ Steps to install:
 2. We have used python 3.7 here.
 
 3. Install the following libraries:
-    -PyPDF2
-    -ZipFile
-    -csv
-    -os
-    -requests
-    -flask
-    -werkzeug
-    -json
+    -PyPDF2 <br>
+    -ZipFile <br>
+    -csv <br>
+    -os <br>
+    -requests <br>
+    -flask <br>
+    -werkzeug <br>
+    -json <br>
 4. Once you have installed these libraries, open a terminal and headover to the project directory (inside pyfiles)
 
 5. Here we need to set up the flask environment variables.
