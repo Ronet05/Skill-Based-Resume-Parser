@@ -3,9 +3,20 @@ import PyPDF2
 import re
 import os
 import csv
+import requests
 #We will need to use flask to take the correct zipfile name. 
 #The "files" list here is basically a container for objects.
+class PDFReader:
+    def extractandread(zipname):
 
+
+
+
+
+
+
+
+        
 zipname = "resumes.zip"
 with ZipFile(zipname,'r') as zip:
     zip.extractall()

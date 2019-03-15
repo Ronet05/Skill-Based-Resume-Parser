@@ -1,14 +1,6 @@
-<html>
-   <head>
-      <title>Upload the resumes here</title>
-      <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% extends "layout.html" %}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   </head>
-   <body>
-      <div class="container">
+   {% block content%}
       <form action = "http://localhost:5000/uploader" method = "POST" name="resume_filter"  enctype = "multipart/form-data">
          <div class="form-group" style="padding-top: 2%;">
                <label>Enter your job description here: </label><br>
@@ -25,8 +17,6 @@
          <div class="form-group">
                <input type = "submit" class="btn btn-outline-info"/>
          </div>
-         
       </form>
-      </div>
-   </body>
-</html>
+   {% endblock content %}
+      
