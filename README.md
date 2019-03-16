@@ -36,4 +36,6 @@ Steps to install:
 
 13. The output should be the scores for each resume.
 
+<b>NOTE:</b> The scoring and skill extraction algorithm is yet to be optimised further. We will encorporate priority-based skill scoring as well. Our application will include more advanced skill relativity algorithm in future versions. Features like ranking the resumes, parameterised filtering will be projected in the final working prototype.
+
 
