@@ -3,9 +3,11 @@
         <h3> File has been uploaded</h3><br>
         <h3>Summarized resumes</h3><br>
         
-        {% for resume in resumes %}
+        {% for key in scores.keys() %}
             <h3>This resume is: </h3><br>
-            <h3>{{resume}}</h3>
+            <h3>{{ key }}</h3><br>
+            <h3>Score: </h3><br>
+            <h3>{{ scores[key] }}</h3>
             <br>
         {% endfor %}
 
