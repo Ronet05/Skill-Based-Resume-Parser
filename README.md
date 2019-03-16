@@ -7,7 +7,7 @@ Steps to install:
 
 2. We have used python 3.7 here.
 
-3. Install the following libraries:
+3. Install the following libraries: <br>
     -PyPDF2 <br>
     -ZipFile <br>
     -csv <br>
@@ -26,8 +26,16 @@ Steps to install:
 
 8. Write "flask run" to start the server.
 
-9. By default, flask opens in port: 5000. In a web browser, preferably Chrome, wrtite "localhost:5000".
+9. By default, flask opens in port: 5000. In a web browser, preferably Chrome, write "localhost:5000".
 
 10. The home page should load up a form.
 
-11. Fill in the details, upload the zip and see the magic!
+11. Enter the skills required for the particular job, separated by commas. 
+
+12. The resumes should be encapsulated in a zip file, and then uploaded.
+
+13. The output should be the scores for each resume.
+
+<b>NOTE:</b> The scoring and skill extraction algorithm is yet to be optimised further. We will encorporate priority-based skill scoring as well. Our application will include more advanced skill relativity algorithm in future versions. Features like ranking the resumes, parameterised filtering will be projected in the final working prototype.
+
+
