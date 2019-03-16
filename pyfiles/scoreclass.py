@@ -55,12 +55,12 @@ class Calc_Score:
         return s_score
         
 
-    def skillscore_update(self, r_skills, jd_skills, priority, dataset):
+    def skillscore_update(self, r_skills, jd_skills, dataset):
         skill_score = 0
         for i in r_skills:
             score = 0
             for j in range(len(jd_skills)):
                 sc = self.similarity_score_levels(i, jd_skills[j], dataset)
-                score += (sc * priority[j])
+                score += (sc)
             skill_score += score
         return skill_score

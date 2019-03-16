@@ -67,7 +67,7 @@ class PDFReader:
         
         return skills
         
-    def analyze_resume(self, resume_file, file_name, ID):
+    def analyze_resume(self, resume_file, file_name, ID, final_skills):
         scorer=Calc_Score()
         reader = PyPDF2.PdfFileReader(resume_file)
         sentence=' '
@@ -88,8 +88,8 @@ class PDFReader:
             data = json.loads(jsonfile.read())
         jsonfile.close()
         
-        jd = ['python', 'deep_learning','machine_learning']
-        priority_skills = [7, 4, 5]
-        analysis_score = scorer.skillscore_update(resume_skills, jd, priority_skills, data)
+        #jd = ['python', 'deep_learning','machine_learning']
+        #priority_skills = [7, 4, 5]
+        analysis_score = scorer.skillscore_update(resume_skills, final_skills, data)
         
         return analysis_score
