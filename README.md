@@ -30,4 +30,10 @@ Steps to install:
 
 10. The home page should load up a form.
 
-11. Fill in the details, upload the zip and see the magic!
+11. Enter the skills required for the particular job, separated by commas. 
+
+12. The resumes should be encapsulated in a zip file, and then uploaded.
+
+13. The output should be the scores for each resume.
+
+
