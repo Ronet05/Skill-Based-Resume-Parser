@@ -1,16 +1,29 @@
 {% extends "layout.html" %}
     {% block content %}
-        <h3> File has been uploaded</h3><br>
-        <h3>Summarized resumes</h3><br>
-        
-        {% for key in scores.keys() %}
-            <h3>This resume is: </h3><br>
-            <h3>{{ key }}</h3><br>
-            <h3>Score: </h3><br>
-            <h3>{{ scores[key] }}</h3>
+        <div class="container form-style" style="padding-top:2%;">
+            <center><h3><b>Summarized Resumes Scores</b></h3></center>
+            <center><small><b>(Ranked results will be displayed in the working prototype stage)</b></small></center>
             <br>
-        {% endfor %}
+            <table class="table table-striped tablestyle" align="center">
+                <thead>
+                  <tr>
+                    <th scope="col">Name with file</th>
+                    <th scope="col">Score</th>
+                </tr>
+            </thead>
+                    <tbody>
+                        {% for key in scores.keys() %}
+                        <tr>
+                            <td>{{ key }}</td>
+                            <td>{{ scores[key] }}</td>
+                        </tr>
+                        {% endfor %}
 
-
+                    </tbody>
+                  
+            
+            </table>
+            
+        
+        </div>
     {%endblock content %}
-

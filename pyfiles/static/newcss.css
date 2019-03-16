@@ -13,3 +13,10 @@ h1, h2, h3, h4, h5, h6 {
 .form-padd{
     padding-top: 2%;
 }
+center{
+    text-align: center;
+}
+.tablestyle{
+    width: 50%;
+    
+}
