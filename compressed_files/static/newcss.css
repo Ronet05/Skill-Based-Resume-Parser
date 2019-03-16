@@ -1,0 +1,22 @@
+body {
+    background: #fafafa;
+    color: #333333;
+    
+  }
+h1, h2, h3, h4, h5, h6 {
+    color: #444444;
+}
+.form-style{
+    border-radius: 0.5%;
+    
+}
+.form-padd{
+    padding-top: 2%;
+}
+center{
+    text-align: center;
+}
+.tablestyle{
+    width: 50%;
+    
+}

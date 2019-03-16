@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+   {% block content%}
+      <div class="container" style="padding-top:1%;">
+            <h2 style="text-align:center;"><b>CodeStellation Resume Filter</b></h1>
+      </div>
+      <div class="container border border-info form-style">
+      <form class="form-padd" action = "http://localhost:5000/uploader" method = "POST" name="resume_filter"  enctype = "multipart/form-data" >
+         <fieldset class="form-group" >
+         <!--<div class="form-group" >
+               <label>Enter your job description here: </label><br>
+               <textarea class="form-control" rows="4" cols="50" name="jobdesc" id="jobdesc"></textarea>
+         </div>-->
+         <div class="form-group">
+            <label>Enter the desired skills <b>(separated by commas) </b></label><br>
+            <input class="form-control" type= "text" name="skills" id="skills"/>
+      </div>
+         <!--<div class="form-group">
+               <label>Enter the number of resumes to rank: </label><br>
+               <input class="form-control" style="width: 100px;" type= "number" min=1 max=20 name="rank" id="rank"/>
+         </div>-->
+         <div class="form-group">
+               <label>Upload the Resumes <b>(as a .zip)</b> here: </label><br>
+               <input class="form-control-file" type = "file" name = "zipfile" id="zipfile"/>
+         </div>
+         <div class="form-group">
+               <button type = "submit" style="color: azure; " class="btn btn-info btn-outline-info">Submit Form</button>
+         </div>
+      </fieldset>
+      </form>
+      </div>
+   {% endblock content %}
+      

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+    {% block content %}
+        <div class="container form-style" style="padding-top:2%;">
+            <center><h3><b>Summarized Resumes Scores</b></h3></center>
+            <center><small><b>(Ranked results will be displayed in the working prototype stage)</b></small></center>
+            <br>
+            <table class="table table-striped tablestyle" align="center">
+                <thead>
+                  <tr>
+                    <th scope="col">Name with file</th>
+                    <th scope="col">Score</th>
+                </tr>
+            </thead>
+                    <tbody>
+                        {% for key in scores.keys() %}
+                        <tr>
+                            <td>{{ key }}</td>
+                            <td>{{ scores[key] }}</td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                  
+            
+            </table>
+            
+        
+        </div>
+    {%endblock content %}
