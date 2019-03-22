@@ -1,2 +1,3 @@
-"['ID', 'filename', 'Name', 'Score', 'Rank']","[1, 'resumes/Rishabh Dhoot Resume.pdf', 'rishabh dhoot', 6.4]"
+ID,filename,Name,Score,Rank
+1,resumes/Rishabh Dhoot Resume.pdf,rishabh dhoot,6.4
 2,resumes/Ronet_Resume_Updated.pdf,#26 dindli,5.9
