@@ -7,16 +7,25 @@
             <table class="table table-striped tablestyle" align="center">
                 <thead>
                   <tr>
-                    <th scope="col">Name with file</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">File Name</th>
+                    <th scope="col">Name</th>
                     <th scope="col">Score</th>
+                    <th scope="col">Rank</th>
                 </tr>
             </thead>
                     <tbody>
-                        {% for key in scores.keys() %}
+                        {% set rank = 1 %}
+                        {% for row in ranked_list %}
                         <tr>
-                            <td>{{ key }}</td>
-                            <td>{{ scores[key] }}</td>
+                            <td>{{ row[0] }}</td>
+                            <td>{{ row[1] }}</td>
+                            <td>{{ row[2] }}</td>
+                            <td>{{ row[3] }}</td>
+                            <td>{{ loop.index }}</td>
+                            
                         </tr>
+                                
                         {% endfor %}
 
                     </tbody>

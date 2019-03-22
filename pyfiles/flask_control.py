@@ -3,6 +3,7 @@ from werkzeug import secure_filename
 import requests
 from pdfreader import PDFReader
 import csv
+from ranking import  Ranker
 
 
 app = Flask(__name__)
@@ -51,8 +52,12 @@ def upload_file():
             writer=csv.writer(csvFile)            
             writer.writerow(row)
          csvFile.close()
+      
+      ranker=Ranker()
+      ranked_list=ranker.rank_csv()
 
-      return render_template('printresult.html', scores=resumes_scores, title="View Scores",skills=final_skills)
+
+      return render_template('printresult.html', scores=resumes_scores, title="View Scores",skills=final_skills, ranked_list=ranked_list)
 #def print_result():
 #    return render_template('printresult.html', transfer=pdfreader)
 		
