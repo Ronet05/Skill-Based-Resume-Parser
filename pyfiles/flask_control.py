@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, url_for
 from werkzeug import secure_filename
 import requests
 from pdfreader import PDFReader
+import csv
 
 
 app = Flask(__name__)
@@ -31,8 +32,24 @@ def upload_file():
       allresumes=reader.extract_resumes(f.filename)
       resumes_scores = {}
       for index in range(len(allresumes[0])):
-         resume_score = reader.analyze_resume(allresumes[0][index], allresumes[1][index], index + 1, final_skills)
+         
+         analysed_list=reader.analyze_resume(allresumes[0][index], allresumes[1][index], index + 1, final_skills)
+         resume_score = analysed_list[0]
+         name=analysed_list[1]
          resumes_scores[allresumes[1][index]] = resume_score
+         #row columns: id, filename, name, score, rank
+         row=[index+1,allresumes[1][index],name,resume_score]
+         if(index==0):
+            rowinit=[["ID","filename","Name","Score","Rank"],[index+1,allresumes[1][index],name,resume_score]]
+            with open('cv_list.csv','w') as csvFile:
+               writer=csv.writer(csvFile)            
+               writer.writerow(rowinit)
+            csvFile.close()
+         else:
+            with open('cv_list.csv','a') as csvFile:
+               writer=csv.writer(csvFile)            
+               writer.writerow(row)
+            csvFile.close()
 
       return render_template('printresult.html', scores=resumes_scores, title="View Scores",skills=final_skills)
 #def print_result():

@@ -9,6 +9,7 @@ import json
 #We will need to use flask to take the correct zipfile name. 
 #The "files" list here is basically a container for objects.
 class PDFReader:
+    
     def extract_resumes(self, zipname):
         with ZipFile(zipname,'r') as zip:
             zip.extractall()
@@ -56,16 +57,10 @@ class PDFReader:
                         skills.append(word)
         #print(skills)
         #print("\n")
-        
         name=words[0]+" "+words[1]
-        row=[ID,file_name,name,sentence]
-        with open('cv_list.csv','a') as csvFile:
-            writer=csv.writer(csvFile)
-            
-            writer.writerow(row)
-        csvFile.close()
+        skillsandname=[skills,name]
         
-        return skills
+        return skillsandname
         
     def analyze_resume(self, resume_file, file_name, ID, final_skills):
         scorer=Calc_Score()
@@ -90,6 +85,6 @@ class PDFReader:
         
         #jd = ['python', 'deep_learning','machine_learning']
         #priority_skills = [7, 4, 5]
-        analysis_score = scorer.skillscore_update(resume_skills, final_skills, data)
-        
-        return analysis_score
+        analysis_score = scorer.skillscore_update(resume_skills[0], final_skills, data)
+        scoreandname=[analysis_score,resume_skills[1]]
+        return scoreandname
