@@ -1,38 +1,51 @@
 {% extends "layout.html" %}
-    {% block content %}
-        <div class="container form-style" style="padding-top:2%;">
-            <center><h3><b>Summarized Resumes Scores</b></h3></center>
-            <center><small><b>(Ranked results will be displayed in the working prototype stage)</b></small></center>
-            <br>
-            <table class="table table-striped tablestyle" align="center">
-                <thead>
-                  <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">File Name</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Rank</th>
-                </tr>
-            </thead>
-                    <tbody>
-                        {% set rank = 1 %}
-                        {% for row in ranked_list %}
-                        <tr>
-                            <td>{{ row[0] }}</td>
-                            <td>{{ row[1] }}</td>
-                            <td>{{ row[2] }}</td>
-                            <td>{{ row[3] }}</td>
-                            <td>{{ loop.index }}</td>
-                            
-                        </tr>
-                                
-                        {% endfor %}
 
-                    </tbody>
-                  
-            
-            </table>
-            
-        
-        </div>
-    {%endblock content %}
+{% block loaderjs %}
+$(window).load(function () {
+    $('.loader').fadeOut();
+}); 
+{% endblock loaderjs %}
+
+{% block loader %}
+<div class="loader"></div>
+{% endblock loader %}
+
+{% block content %}
+<div class="container form-style" style="padding-top:2%;">
+    <center>
+        <h3><b>Summarized Resumes Scores</b></h3>
+    </center>
+    <center><small><b>(Ranked results will be displayed in the working prototype stage)</b></small></center>
+    <br>
+    <table class="table table-striped tablestyle" align="center">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">File Name</th>
+                <th scope="col">Name</th>
+                <th scope="col">Score</th>
+                <th scope="col">Rank</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% set rank = 1 %}
+            {% for row in ranked_list %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ loop.index }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+
+    </table>
+
+
+</div>
+{% endblock content %}
